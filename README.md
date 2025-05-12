@@ -1,4 +1,7 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Welcome to my GitHub profile.;Crafting Reliable Embedded Systems with C++ & Linux)](https://git.io/typing-svg)
+<!-- Typing SVG -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Welcome+to+my+GitHub+profile.;Crafting+Reliable+Embedded+Systems+with+C+++Linux&center=true&width=500&height=50" alt="Typing SVG" />
+</p>
 
 <!-- Badges -->
 <p align="center">
