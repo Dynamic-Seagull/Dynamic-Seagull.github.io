@@ -1,750 +1,359 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[CV] 주니어 C++ 프로그래머 김연경</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-	margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-default_background {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-uiBlue { background-color: undefined; }
-.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
-.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
-.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
-.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
-.select-value-color-transparentGray { background-color: undefined; }
-.select-value-color-translucentGray { background-color: undefined; }
-.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
-.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
-.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
-.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
-.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[CV] 주니어 C++ 프로그래머 김연경</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<article class="page sans">
+	<!--타이틀-->
+	<header><img class="page-cover-image" src="etc/title.jpg" style="object-position:center 56.88999999999999%"/><br>
+		<h1 class="page-title">[CV] 주니어 C++ 프로그래머 김연경</h1><p class="page-description"></p>
+	</header>
 	
-.sort-toggle {
-  background-color: #ffe066;
-  color: #333;
-  border: 2px solid #ffe066;
-  border-radius: 10px;
-  padding: 4px 16px;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 2px 2px 0 #e6b800;
-}
-
-.sort-toggle:hover {
-  background-color: #fff3bf;
-  border: 2px solid #fff3bf;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.sort-toggle:active {
-  transform: translateY(1px);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-}
-	
-</style></head><body><article id="1d44e3ab-746c-80c5-bd44-cdc919073faa" class="page sans"><header><img class="page-cover-image" src="1%201.jpg" style="object-position:center 56.88999999999999%"/>
-<h1 class="page-title">[CV] 주니어 C++ 프로그래머 김연경</h1><p class="page-description"></p></header><div class="page-body"><h2 id="1f14e3ab-746c-80d7-a147-fc672ce8f089" class=""><mark class="highlight-yellow_background">프로필</mark></h2><div id="1d44e3ab-746c-80e6-a27b-fee48063516e" class="column-list"><div id="1d44e3ab-746c-80f2-883a-e567296fdab6" style="width:56.25%" class="column"><p id="1f14e3ab-746c-80a0-82e9-e530e9427997" class="">
-</p><figure id="1d44e3ab-746c-8087-ac18-c222951acbfd" class="image"><a href="38330aca-8536-4713-b35e-1954c856e699.png"><img style="width:240px" src="38330aca-8536-4713-b35e-1954c856e699.png"/></a></figure></div><div id="1d44e3ab-746c-806c-b704-dd68c94052ad" style="width:93.75%" class="column"><p id="1d44e3ab-746c-8092-946f-c663fee0b099" class=""><strong>김연경</strong> Kim YeonGyeong</p><p id="1f14e3ab-746c-80cf-a52d-d7a42e0e0386" class=""><strong>E-mail : </strong>yg7009@naver.com</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-8084-96e5-c18dacd10a45"><div style="width:100%"><p id="1f14e3ab-746c-804d-8359-cce621873319" class="">C/C++을 주로 사용하는 주니어 프로그래머 입니다.</p><p id="1f14e3ab-746c-80f8-a4e4-c7de31950016" class="">기술은 타인의 권리를 침해하지 않는 선에서 선한 방향으로 활용되고 발전해야 한다는 마음가짐을 최우선으로 생각합니다.</p><p id="1f14e3ab-746c-8031-a4b2-c58eab6500e7" class="">동아대학교 컴퓨터공학과를 졸업하고, 현재는 한국방송통신대학교 경영학과에 재학 중이며, 기술뿐 아니라 비즈니스적인 사고도 함께 기르기 위해 노력하고 있습니다.</p></div></figure><p id="1f14e3ab-746c-8031-b013-c1019ffa957a" class=""><strong>보유기술 : C/C++/C#, Qt, Linux, OpenCV, Unity</strong></p><p id="1f14e3ab-746c-80cd-89b9-cdfaf87fb739" class=""><a href="https://github.com/Dynamic-Seagull">https://github.com/Dynamic-Seagull</a></p></div></div><p id="1f14e3ab-746c-80d0-8671-f9672fc4b09b" class="">
-</p><hr id="1f14e3ab-746c-80a4-a25d-e27fcbb070d1"/><p id="1f14e3ab-746c-80ff-bef1-decd85bbe76b" class="">
-</p><h2 id="1f14e3ab-746c-8004-bcbe-dbd9cff10997" class=""><mark class="highlight-yellow_background">관심분야</mark></h2><ul id="1f14e3ab-746c-802b-a115-c95b3e82cb78" class="bulleted-list"><li style="list-style-type:disc"><strong>MCU/MPU</strong> : 아두이노와 라즈베리 파이를 이용한 토이프로젝트를 진행합니다.</li></ul><ul id="1f14e3ab-746c-800d-ae08-dc6594c34800" class="bulleted-list"><li style="list-style-type:disc"><strong>임베디드</strong> : Linux와 Qt를 사용하여 단말을 제어하는 어플리케이션을 제작합니다. </li></ul><ul id="1f14e3ab-746c-8095-88d8-f749dc96f781" class="bulleted-list"><li style="list-style-type:disc"><strong>게임</strong> : C#/C++ 언어를 사용하여 게임을 제작합니다.</li></ul><p id="1f14e3ab-746c-804f-8218-df69a5bda1ae" class="">
-</p><h2 id="1f14e3ab-746c-8068-a48d-e70efb21b50b" class="" style="gap: 1em;"><mark class="highlight-yellow_background">참여 프로젝트</mark>   <span style="font-size: initial; font-weight: normal;"><button class="sort-toggle" onclick="toggleProjectSort(this)" data-order="asc">🔽 최신순</button></span></h2>
-<div id="project-section"><div class="project-entry" data-date="2023-04-01"><p id="1f14e3ab-746c-80b2-a1e2-e958a87b3b83" class=""><strong>환경소재 임팩트 게임 [사라진 그것들에 대하여 : About Become Extince]</strong></p><p id="1f14e3ab-746c-8014-939c-f9a1034dae33" class="">2023.04 ~ 2024.02 <mark class="highlight-yellow">|</mark> 3인 개발 <mark class="highlight-yellow">|</mark> C#, Unity</p><div id="1f14e3ab-746c-8023-9aaf-ca6c4415d346" class="column-list"><div id="1f14e3ab-746c-80eb-bab5-efdc900bd8d7" style="width:50%" class="column"><figure id="1f14e3ab-746c-80c4-ac4e-e238cc2338cc" class="image"><a href="image.png"><img style="width:709.96875px" src="image.png"/></a></figure></div><div id="1f14e3ab-746c-8022-82a4-d57733aacd82" style="width:50%" class="column"><figure id="1f14e3ab-746c-806a-b89e-cc1e65cd4da1" class="image"><a href="image%201.png"><img style="width:331.984375px" src="image%201.png"/></a></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-80c7-ac3b-e4366b61a4d2"><div style="width:100%"><p id="1f14e3ab-746c-8043-9844-e9a0cf5edbcc" class="">환경오염으로 인해 식물이 멸종한 미래 세계를 배경으로, 식물 복원을 위해 타임머신을 타고 과거로 떠나는 RPG 슈팅 게임입니다. 충돌 판정과 좌표 처리 개선을 통해 2D 환경에서도 깊이감을 살렸으며, Inverse Kinematics를 통해 리소스 효율성을 확보했습니다. 전체 기획과 스킬 시스템 구현을 맡았으며, 전시회 장려상 수상 및 인디 게임 플랫폼 심사를 진행했습니다.</p></div></figure><p id="1f14e3ab-746c-80ae-ba18-ffff9bfb0ca4" class=""><a href="https://github.com/Dynamic-Seagull/ABE.git">https://github.com/Dynamic-Seagull/ABE.git</a></p><p id="1f14e3ab-746c-80ab-8fba-d3bf66860104" class="">
-</p></div><div class="project-entry" data-date="2024-08-01"><p id="1f14e3ab-746c-8089-ae52-d332af1f1640" class=""><strong>To-Do &amp; Done List 어플리케이션</strong></p><p id="1f14e3ab-746c-808b-b611-e7218b29590a" class="">2024.08 ~ 2024. 09 <mark class="highlight-yellow">|</mark> 2인 개발 <mark class="highlight-yellow">|</mark> C, C++, Qt</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-80ad-a65d-fe3e1911c7ba"><div style="width:100%"><p id="1f14e3ab-746c-80ef-909b-e00ed1c18eb6" class="">CLI 환경에서 동작하던 간단한 작업 리스트 프로그램을 GUI 기반으로 개선하여 사용자 편의성을 높였습니다. Qt를 활용해 일정 등록, 완료 체크, 목록 정렬 기능을 포함한 직관적인 UI를 구현했습니다. 간결한 구조로 설계하여 학습용 및 일상 관리용으로 활용할 수 있는 데스크톱 어플리케이션입니다.</p></div></figure><p id="1f14e3ab-746c-809a-b360-c5960fa0f7a4" class=""><a href="https://github.com/Dynamic-Seagull/VEDA_ToDo.git">https://github.com/Dynamic-Seagull/VEDA_ToDo.git</a></p><p id="1f14e3ab-746c-8039-acb5-cebd167cebda" class="">
-</p></div><div class="project-entry" data-date="2024-09-01"><p id="1f14e3ab-746c-8097-85f4-c4b5a7346b51" class=""><strong>블로그 어플리케이션</strong></p><p id="1f14e3ab-746c-801b-b096-fb5928ae5e39" class="">2024.09 ~ 2024.10 <mark class="highlight-yellow">|</mark> 3인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt</p><div id="1f14e3ab-746c-80f4-bcc4-ca23fcce71d4" class="column-list"><div id="1f14e3ab-746c-8033-baec-e9a24af7cb96" style="width:43.75%" class="column"><figure id="1f14e3ab-746c-80d0-b8b0-ce590a28e1e2" class="image"><a href="image%202.png"><img style="width:331.984375px" src="image%202.png"/></a></figure></div><div id="1f14e3ab-746c-808b-b035-d8cf3d37a6ea" style="width:56.25%" class="column"><figure id="1f14e3ab-746c-80f6-bef5-dbc6178f0997" class="image"><a href="image%203.png"><img style="width:709.984375px" src="image%203.png"/></a></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-805d-ae25-c0220a5102dd"><div style="width:100%"><p id="1f14e3ab-746c-80bc-823a-d561fd02b3c4" class="">Ubuntu 기반의 서버에서 구동되는 블로그 플랫폼으로, 클라이언트-서버 간 REST API를 통해 데이터 통신을 수행합니다. 사용자 로그인, 글 작성 및 조회 기능을 제공하며, MariaDB를 활용한 DB 연동과 멀티스레드를 통한 동시 접속 처리를 구현했습니다. 통신 담당 인원이 중도 하차하였으나 전체 구조를 빠르게 파악하고 인수인계를 수행하여 프로젝트 완성을 주도했습니다.</p></div></figure><p id="1f14e3ab-746c-80ee-894a-c7c6129063b3" class=""><a href="https://github.com/sm136599/VEDA_Qt_blog_server.git">https://github.com/sm136599/VEDA_Qt_blog_server.git</a></p><p id="1f14e3ab-746c-804f-a041-e6f24fe809be" class="">
-</p></div><div class="project-entry" data-date="2024-10-01"><p id="1f14e3ab-746c-80ca-a39c-ea9388b44da1" class=""><strong>유동형 화상회의 어플 [Meeting Zone]</strong></p><p id="1f14e3ab-746c-80dc-bac3-feb814b28274" class="">2024.10 ~ 2024.12 <mark class="highlight-yellow">|</mark> 5인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt, OpenCV</p><div id="1f14e3ab-746c-8082-ac1b-c8e0a9027f38" class="column-list"><div id="1f14e3ab-746c-801b-8a62-c7f9c4997ee1" style="width:43.75%" class="column"><figure id="1f14e3ab-746c-80a0-a9d6-d0f1029877ce" class="image"><a href="image%204.png"><img style="width:709.984375px" src="image%204.png"/></a></figure></div><div id="1f14e3ab-746c-808e-a02f-cdc27c05f514" style="width:56.25%" class="column"><figure id="1f14e3ab-746c-80c0-ae3e-d8d5961f8377" class="image"><a href="image%205.png"><img style="width:373.484375px" src="image%205.png"/></a></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-803d-bde4-d3ce4a1d62c1"><div style="width:100%"><p id="1f14e3ab-746c-80db-8d14-d24c1e9d1a49" class="">OpenCV를 활용해 사용자의 얼굴을 인식하고 배경을 자동으로 제거하는 화상회의 클라이언트를 개발했습니다. 실시간 성능 개선을 위해 MOG 방식 대신 GrabCut 알고리즘을 적용하였고, Raspberry Pi 카메라의 영상 송출을 GStreamer로 제어하는 업무를 담당했습니다. 메타버스 환경의 자유로움과 화상회의의 가시성을 결합한 독창적인 유동형 인터페이스가 특징입니다.</p></div></figure><p id="1f14e3ab-746c-8005-9c72-e288c7b87d6a" class=""><a href="https://github.com/ky107601/MeetingZone-MZ-.git">https://github.com/ky107601/MeetingZone-MZ-.git</a></p><p id="1f14e3ab-746c-8043-866b-c036b137f20d" class="">
-</p></div><div class="project-entry" data-date="2024-10-02"><p id="1f14e3ab-746c-80c6-add9-cf683987c973" class=""><strong>한화비전 CCTV 과제 : OpenCV를 이용한 BestShot 구현</strong></p><p id="1f14e3ab-746c-80fc-be6e-d86d7d10d391" class="">2024.10 ~ 2024.12 <mark class="highlight-yellow">|</mark> 5인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt, OpenCV</p><div id="1f14e3ab-746c-806f-8365-fe0f1106f130" class="column-list"><div id="1f14e3ab-746c-8029-84e0-dc842ddc5342" style="width:56.25%" class="column"><figure id="1f14e3ab-746c-802f-a372-dac9af4f0259" class="image"><a href="image%206.png"><img style="width:709.984375px" src="image%206.png"/></a></figure></div><div id="1f14e3ab-746c-8031-9757-c86a5756a40f" style="width:43.75%" class="column"><figure id="1f14e3ab-746c-802c-83f8-df9aaad198a2" class="image"><a href="image%207.png"><img style="width:290.484375px" src="image%207.png"/></a></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-80a4-94cc-f91a5c525d36"><div style="width:100%"><p id="1f14e3ab-746c-808a-a869-c6459b907661" class="">CCTV 영상에서 인물의 얼굴을 실시간으로 인식하고, 사전에 설정된 정확도 기준을 충족할 경우 캡처하여 전송하는 BestShot 기능을 구현했습니다. 한화비전 제공 SDK의 내부 로직이 비공개인 상황에서도 로그 추적과 enum 분석을 통해 필요한 기능을 추출해냈습니다. 완성된 기능은 웹 페이지에 실시간으로 출력되며, 실제 장비에서 실행 가능한 상태로 개발되었습니다. (보안으로 인한 코드 공개 불가능)</p></div></figure><p id="1f14e3ab-746c-80da-a897-d909203d8195" class="">
-</p></div><div class="project-entry" data-date="2025-04-01"><p id="1f14e3ab-746c-805f-b342-e0c9f5a58e2c" class=""><strong>임베디드 토이프로젝트 [이그젝트 : ig-ject]</strong></p><p id="1f14e3ab-746c-8047-95a6-cc4c5455da01" class="">2025.04 ~ 진행중 <mark class="highlight-yellow">|</mark> 1인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt, Raspberry Pi, Arduino</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1f14e3ab-746c-80f4-8bb7-e58b03179801"><div style="width:100%"><p id="1f14e3ab-746c-808c-8554-f9009fc705dd" class="">일상 속에서 재미있게 활용할 수 있는 소형 임베디드 장치를 직접 설계하고 개발하는 개인 프로젝트입니다. Raspberry Pi와 Arduino를 이용해 회로 설계부터 센서 제어, 예외 처리까지 전반적인 임베디드 환경을 경험하기위한 프로젝트입니다. 반복 실행에서도 오류가 발생하지 않도록 안정성에 중점을 두고 예외처리를 설계하고 있으며, 다양한 결과물을 지속적으로 추가할 예정입니다.</p></div></figure><p id="1f14e3ab-746c-80d3-87cb-c65870e56b55" class=""><a href="https://github.com/Dynamic-Seagull/ig-ject.git">https://github.com/Dynamic-Seagull/ig-ject.git</a></p><p id="1f14e3ab-746c-80fe-a728-c5d560b50d25" class="">
-</p></div></div><p id="1f14e3ab-746c-8099-9a0e-d117afe3f841" class="">
-</p><hr id="1f14e3ab-746c-80d2-ad8f-ec00e221c912"/><p id="1f14e3ab-746c-804e-bec3-d7c1c5066c27" class="">
-</p><h2 id="1f14e3ab-746c-8090-a370-d00c8f54daed" class=""><mark class="highlight-yellow_background">활동</mark></h2><p id="1f14e3ab-746c-80ab-a8d7-c44dd1ca0752" class="">
-</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">참여활동</summary><div class="indented"><p id="1f14e3ab-746c-8016-992c-d322547eee54" class=""><strong>취미동아리 [일본문화예술연구회]</strong></p><p id="1f14e3ab-746c-8077-9c87-dae5e0b3e43b" class="">2019.03 ~ 2024.02 (동아리장 : 2021.03~2023.02) </p><p id="1f14e3ab-746c-8074-8bf6-c2dd0efbe7f2" class="">4년간 일본문화예술연구회에서 간부로 활동하며, 문집 제작, 교내 행사 기획, 동아리방 이전 등의 주요 업무를 담당했습니다. 동아리에 대한 애정을 바탕으로 지속적인 참여와 책임감을 가지고 활동했습니다. 대학시절 가장 즐거웠던 활동입니다.</p><div id="1f14e3ab-746c-80b5-aad4-ee1046188132" class="column-list"><div id="1f14e3ab-746c-803f-b7ee-d7eef7936545" style="width:56.25%" class="column"><figure id="1f14e3ab-746c-80fb-9f19-dd0bfe8b673b" class="image"><a href="KakaoTalk_20250512_211036594.jpg"><img style="width:4032px" src="KakaoTalk_20250512_211036594.jpg"/></a></figure></div><div id="1f14e3ab-746c-804c-bdbb-fa8647a1e4d3" style="width:43.74999999999999%" class="column"><figure id="1f14e3ab-746c-8005-bd66-c8fa6e578fb7" class="image"><a href="KakaoTalk_20250512_211034710.jpg"><img style="width:4000px" src="KakaoTalk_20250512_211034710.jpg"/></a></figure></div></div><p id="1f14e3ab-746c-8031-b731-f141916b0e34" class="">
-</p><p id="1f14e3ab-746c-8059-83da-e239238ab07b" class=""><strong>보안동아리 [콜로니]</strong></p><p id="1f14e3ab-746c-807a-b2e8-f53773082205" class="">2019.03 ~ 2021.02 (해킹 스터디 : 2019.03~ 2019.06 / 2020.12 ~ 2021.01)</p><p id="1f14e3ab-746c-80b9-8011-c90bc926610f" class="">보안 동아리 &#x27;콜로니&#x27;에서 해킹 스터디와 CTF(해킹 대회)에 참여하며 웹 해킹에 대한 지식을 쌓았습니다. 다양한 문제를 직접 풀어보며 보안 취약점 분석 능력과 문제 해결력을 기를 수 있었습니다. 실습 중심의 활동을 통해 보안 분야에 대한 흥미와 기초 지식을 배웠습니다..</p><div id="1f14e3ab-746c-8051-aa43-fbb219aad9e5" class="column-list"><div id="1f14e3ab-746c-8014-bb35-d6e951346213" style="width:50%" class="column"><figure id="1f14e3ab-746c-800e-b17c-c460d97b97d5" class="image"><a href="%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C11.jpg"><img style="width:710px" src="%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C11.jpg"/></a></figure></div><div id="1f14e3ab-746c-80f5-960d-fdf7d2b5753b" style="width:50%" class="column"><figure id="1f14e3ab-746c-80df-b875-e08316df3e9d" class="image"><a href="%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C16.jpg"><img style="width:1280px" src="%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C16.jpg"/></a></figure></div></div><p id="1f14e3ab-746c-803c-8ea5-c46777097aee" class="">
-</p><p id="1f14e3ab-746c-80f2-988a-d900c2f09134" class=""><strong>게임 개발팀 [하프셋]</strong></p><p id="1f14e3ab-746c-8053-a98b-d85c67dd714b" class="">2023.03 ~ 2024.02</p><p id="1f14e3ab-746c-805b-b902-c6069f8ea06b" class="">디자이너 1명과 개발자 2명으로 구성된 소규모 게임 개발팀 ‘하프셋’에서 팀원으로 활동하며 직접 게임을 제작했습니다. 공모전 출품을 목표로 협업과 개발을 진행하였고, 창업에 대한 의지도 함께 키웠습니다. 아쉽게도 팀은 각자의 사정으로 해체되었지만, 1년간 함께 작업했던 시간은 모두에게 즐거운 추억이 되어 여전히 친밀한 관계를 유지해 나가고 있습니다.</p><div id="1f14e3ab-746c-80b5-8e1c-c85823ebad5b" class="column-list"><div id="1f14e3ab-746c-80d8-a174-c4807599bc8b" style="width:50%" class="column"><figure id="1f14e3ab-746c-805a-8a11-c9121a0fa4eb" class="image"><a href="2.jpg"><img style="width:6120px" src="2.jpg"/></a></figure></div><div id="1f14e3ab-746c-8092-a269-d49a94f9b758" style="width:50%" class="column"><figure id="1f14e3ab-746c-80b4-854f-e71fa436cedd" class="image"><a href="HALFSET_Team_Logo.png"><img style="width:300px" src="HALFSET_Team_Logo.png"/></a></figure><figure id="1f14e3ab-746c-8088-ae44-e0e06ac1a6a9" class="image"><a href="48c5d689-d447-4b03-80b9-23ed7475c144.png"><img style="width:385.24271844660194px" src="48c5d689-d447-4b03-80b9-23ed7475c144.png"/></a></figure></div></div><p id="1f14e3ab-746c-8022-b6fd-ee77fb92c370" class="">
-</p><p id="1f14e3ab-746c-807e-b959-e4623d537080" class=""><strong>기술 교육 이수 [HP 도커 &amp; 쿠버네티스 부트캠프]</strong></p><p id="1f14e3ab-746c-8015-8e2d-fb2eae36a3c3" class="">2024.01 ~2024.01</p><p id="1f14e3ab-746c-804a-a93a-d04cbf817700" class="">리눅스 중급 과정과 함께 Docker, Kubernetes 등 클라우드 기술을 다루는 교육에 참여하여 총 72시간의 교육을 이수했습니다. 이론뿐만 아니라 실습 중심의 커리큘럼을 통해 시스템 환경 구성과 운영에 대한 이해도를 높였습니다. 개발 및 배포 자동화에 대한 기초를 다질 수 있었고 특히 리눅스에 대한 이해를 넓히는 것에 도움이 되었습니다.</p><p id="1f14e3ab-746c-804a-b458-f9d16cb94861" class="">
-</p><p id="1f14e3ab-746c-8049-8346-c1a84c96a8bb" class=""><strong>대외활동 [부산글로벌게임센터 서포터즈 8기]</strong></p><p id="1f14e3ab-746c-8079-bc1b-e57329d6e497" class="">2024.06 ~ 2024.12</p><p id="1f14e3ab-746c-8080-aab3-c00b8b5df4de" class="">글로벌게임센터 서포터즈 8기로 활동하며, BIC 및 지스타 같은 국내 주요 게임 행사에 참여했습니다. 팀원의 무단이탈과 행사 불참 등의 이유로 어려움이 있었지만 남은 팀원들 간 분위기를 화합하고 게임에 익숙하지 않은 인원들이 행사에 잘 참여 할 수 있도록 노력하며 팀 미션을 완료하는데 집중했습니다. 다양한 분야의 사람들과 함께 할 수 있는 활동이어서 여러 관점에서 하나의 주제에 대해 이야기 할 수 있었습니다.</p><div id="1f14e3ab-746c-80f6-9231-e977ef942844" class="column-list"><div id="1f14e3ab-746c-8038-b6d6-eec96cf95f00" style="width:50%" class="column"><figure id="1f14e3ab-746c-8019-9043-fffe73e64b50" class="image"><a href="KakaoTalk_20250512_212536738.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212536738.jpg"/></a></figure></div><div id="1f14e3ab-746c-8029-83f4-f4aae04eb4df" style="width:50%" class="column"><figure id="1f14e3ab-746c-80c9-8331-c82109daec87" class="image"><a href="KakaoTalk_20250512_212536160.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212536160.jpg"/></a></figure></div></div><p id="1f14e3ab-746c-8009-b0f9-fb0536061696" class="">
-</p><p id="1f14e3ab-746c-806d-a0d0-f10705f7e007" class=""><strong>기술교육 이수 [한화비전/GSC VEDA 부트캠프]</strong></p><p id="1f14e3ab-746c-80de-a917-e7c2c3968379" class="">2024.07 ~ 2024.12</p><p id="1f14e3ab-746c-80f2-ba0b-d77805d36e05" class="">엣지디바이스 개발을 위한 c++ 및 리눅스 교육입니다. 리눅스(우분투) 환경에서 임베디드용 소프트웨어를 개발하기 위하여 필요한 기술들(Qt, Yocto 등)을 공부하였습니다. 해당 프로그램을 이수하면서 2개의 팀프로젝트를 진행하였고 프로젝트를 진행하며 한화비전의 sdk와 cctv모델을 사용하였습니다. 실습은 라즈베리파이와 카메라 모듈을 사용하여 진행하였습니다. 해당 프로그램을 이수하면서 현직자 멘토분들을 통해 어떻게 현업이 이루어지는지 공부 할 수 있었고 회사의 제품을 직접 제공받아 사용해보면서 협업이 어떻게 이루어지는지 배울 수 있었습니다. 열정 넘치는 팀원들과 하루종일 함께 작업 할 수 있어서 즐거웠습니다.</p><div id="1f14e3ab-746c-80b7-a0d0-d6b30cec24b1" class="column-list"><div id="1f14e3ab-746c-8055-ac11-ed43d8ab090f" style="width:43.75%" class="column"><figure id="1f14e3ab-746c-80f3-bab5-c27ca2cab0cb" class="image"><a href="KakaoTalk_20250512_212540595.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212540595.jpg"/></a></figure></div><div id="1f14e3ab-746c-8074-b26f-ef8eb8b9645e" style="width:56.25%" class="column"><figure id="1f14e3ab-746c-808f-a201-dffc1641df14" class="image"><a href="KakaoTalk_20250512_212541057.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212541057.jpg"/></a></figure></div></div></div></details><p id="1f14e3ab-746c-80c1-9733-ea02d6a2198c" class="">
-</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">취미활동</summary><div class="indented"><p id="1f14e3ab-746c-8027-9da5-c54a7f691e1b" class=""><strong>밴드활동 [I Am Cracker]</strong></p><p id="1f14e3ab-746c-801f-a777-edd271ad488c" class="">취미 밴드 ‘I Am Cracker’에서 베이스 기타를 담당하고 있습니다. 낮은 음으로 드럼과 함께 세션의 리듬을 이끄는 베이스를 좋아하여 꾸준히 연습하고 있습니다. </p><div id="1f14e3ab-746c-8042-a977-efa12d9ebd9c" class="column-list"><div id="1f14e3ab-746c-8098-a6c1-cdbe4ad0ec88" style="width:25%" class="column"><figure id="1f14e3ab-746c-805c-a07e-d8d9391ee320" class="image"><a href="KakaoTalk_20250512_211035748.jpg"><img style="width:2268px" src="KakaoTalk_20250512_211035748.jpg"/></a></figure></div><div id="1f14e3ab-746c-8065-bd49-eaf917c36e2a" style="width:75%" class="column"><figure id="1f14e3ab-746c-8018-bf8b-e990545125b9" class="image"><a href="d35ed65a-e7ac-4173-b869-7d4dc46385ed.png"><img style="width:576px" src="d35ed65a-e7ac-4173-b869-7d4dc46385ed.png"/></a></figure></div></div><p id="1f14e3ab-746c-8014-89b6-e79cbeb49719" class="">
-</p><p id="1f14e3ab-746c-801a-b2c6-f347abf6db63" class=""><strong>국내 도보 여행</strong></p><p id="1f14e3ab-746c-80a2-8df5-c0e5320ebfd5" class="">국내를 여행 하며 혼자 다양한 지역을 탐방하는 것을 좋아합니다. 경치가 아름다운 자연 풍경이나 역사적인 유적지를 찾아다니며 여유롭게 시간을 보내며 즐거움을 느낍니다. 이러한 여행은 일상에 신선함을 주고, 잠시 쉬어가는 터닝포인트가 됩니다.</p><div id="1f14e3ab-746c-8099-8a58-e27476e46ebc" class="column-list"><div id="1f14e3ab-746c-80b0-8821-cbbb2a505710" style="width:43.75%" class="column"><figure id="1f14e3ab-746c-80a8-97c5-e65a82654e94" class="image"><a href="1.jpg"><img style="width:8160px" src="1.jpg"/></a></figure></div><div id="1f14e3ab-746c-80b9-a42b-e092ce19d906" style="width:56.25%" class="column"><figure id="1f14e3ab-746c-8039-bacd-da2eca4e9df8" class="image"><a href="KakaoTalk_20250512_212538958.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212538958.jpg"/></a></figure></div></div><p id="1f14e3ab-746c-8093-b716-d41a43d350c5" class="">
-</p><p id="1f14e3ab-746c-8022-af73-d2c6fa51fd91" class=""><strong>야구 관람</strong></p><p id="1f14e3ab-746c-80b0-a125-d5f902094054" class="">원조 낭만의 팀 부산 롯데 자이언츠의 팬입니다. 롯데 자이언츠가 통합 우승을 하는 그날까지.</p><div id="1f14e3ab-746c-800d-b13c-c18348857df4" class="column-list"><div id="1f14e3ab-746c-806f-af8a-f8c6ffefc5a6" style="width:50%" class="column"><figure id="1f14e3ab-746c-802d-a5eb-c33a67d7dedc" class="image"><a href="KakaoTalk_20250512_212537943.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212537943.jpg"/></a></figure></div><div id="1f14e3ab-746c-8072-92e1-c0095313eff9" style="width:50%" class="column"><figure id="1f14e3ab-746c-805b-891f-c296abb7ca01" class="image"><a href="KakaoTalk_20250512_212537318.jpg"><img style="width:4000px" src="KakaoTalk_20250512_212537318.jpg"/></a></figure></div></div><p id="1f14e3ab-746c-8089-80a9-fe4a7629289c" class="">
-</p><p id="1f14e3ab-746c-80bd-b308-e0805a7ddcdb" class="">
-</p></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+	<!--본문-->
+	<div class="page-body"><h2><mark class="highlight-yellow_background">프로필</mark></h2><div class="column-list"><div style="width:56.25%" class="column">
+		</p><br><figure class="image"><a href="etc/profile.png"><img style="width:270px" src="etc/profile.png"/></a></figure></div><div style="width:93.75%" class="column"><br><p><strong>김연경</strong> Kim YeonGyeong</p><p><strong>E-mail : </strong>yg7009@naver.com</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"><div style="width:100%"><p>C/C++을 주로 사용하는 주니어 프로그래머 입니다.</p><p>기술은 타인의 권리를 침해하지 않는 선에서 선한 방향으로 활용되고 발전해야 한다는 마음가짐을 최우선으로 생각합니다.</p><p>동아대학교 컴퓨터공학과를 졸업하고, 현재는 한국방송통신대학교 경영학과에 재학 중이며, 기술뿐 아니라 비즈니스적인 사고도 함께 기르기 위해 노력하고 있습니다.</p></div></figure><p><strong>보유기술 : C/C++/C#, Qt, Linux, OpenCV, Unity</strong></p><p><a href="https://github.com/Dynamic-Seagull">https://github.com/Dynamic-Seagull</a></p></div></div><p>
+		</p><br><hr/><p></p><br>
+		
+		<!--관심분야-->
+		<h2><mark class="highlight-yellow_background">관심분야</mark></h2>
+			<ul class="bulleted-list"><li style="list-style-type:disc">
+			<strong>MCU/MPU</strong> : 아두이노와 라즈베리 파이를 이용한 토이프로젝트를 진행합니다.</li></ul>
+			<ul class="bulleted-list"><li style="list-style-type:disc">
+			<strong>임베디드</strong> : Linux와 Qt를 사용하여 단말을 제어하는 어플리케이션을 제작합니다. </li></ul>
+			<ul class="bulleted-list"><li style="list-style-type:disc">
+			<strong>게임</strong> : C#/C++ 언어를 사용하여 게임을 제작합니다.</li></ul>
+		<p></p>
+		<br>
+		
+		<!--참여 프로젝트-->
+		<h2 style="gap: 1em;"><mark class="highlight-yellow_background">참여 프로젝트</mark>
+		<span style="font-size: initial; font-weight: normal;"><button class="sort-toggle" onclick="toggleProjectSort(this)" data-order="asc">🔽 최신순</button></span></h2>
+		<br>
+		
+		<div id="project-section">
+			<!--ABE-->
+			<div class="project-entry" data-date="2023-04-01">
+				<p><strong>환경소재 임팩트 게임 [사라진 그것들에 대하여 : About Become Extinct]</strong></p>
+				<p>2023.04 ~ 2024.02 <mark class="highlight-yellow">|</mark> 3인 개발 <mark class="highlight-yellow">|</mark> C#, Unity</p>
+				<!--이미지-->
+				<div class="column-list">
+					<div style="width:50%" class="column">
+						<figure class="image"><a href="a_project/ABE_1.png">
+						<img style="width:709.96875px" src="a_project/ABE_1.png"/></a></figure>
+					</div>
+					<div style="width:50%" class="column">
+						<figure class="image"><a href="a_project/ABE_2.png">
+						<img style="width:710px" src="a_project/ABE_2.png"/></a></figure>
+					</div>
+				</div>
+				<!--설명-->
+				<figure class="block-color-gray_background callout" style="display:flex">
+					<div style="width:100%">
+						<p>환경오염으로 인해 식물이 멸종한 미래 세계를 배경으로, 식물 복원을 위해 타임머신을 타고 과거로 떠나는 RPG 슈팅 게임입니다. 충돌 판정과 좌표 처리 개선을 통해 2D 환경에서도 깊이감을 살렸으며, Inverse Kinematics를 통해 리소스 효율성을 확보했습니다. 전체 기획과 스킬 시스템 구현을 맡았으며, 전시회 장려상 수상 및 인디 게임 플랫폼 심사를 진행했습니다.</p>
+					</div>
+				</figure>
+				<!--프로젝트 링크-->
+				<p><a href="https://github.com/Dynamic-Seagull/ABE.git">https://github.com/Dynamic-Seagull/ABE.git</a></p>
+				<p></p>
+				<br>
+			</div>
+			
+			<!--투두리스트-->
+			<div class="project-entry" data-date="2024-08-01">
+				<p><strong>To-Do &amp; Done List 어플리케이션</strong></p>
+				<p>2024.08 ~ 2024. 09 <mark class="highlight-yellow">|</mark> 2인 개발 <mark class="highlight-yellow">|</mark> C, C++, Qt</p>
+				<!--설명-->
+				<figure class="block-color-gray_background callout" style="display:flex">
+					<div style="width:100%">
+						<p>CLI 환경에서 동작하던 간단한 작업 리스트 프로그램을 GUI 기반으로 개선하여 사용자 편의성을 높였습니다. Qt를 활용해 일정 등록, 완료 체크, 목록 정렬 기능을 포함한 직관적인 UI를 구현했습니다. 간결한 구조로 설계하여 학습용 및 일상 관리용으로 활용할 수 있는 데스크톱 어플리케이션입니다.</p>
+					</div>
+				</figure>
+				<!--프로젝트 링크-->
+				<p><a href="https://github.com/Dynamic-Seagull/VEDA_ToDo.git">https://github.com/Dynamic-Seagull/VEDA_ToDo.git</a></p>
+				<p></p>
+				<br>
+			</div>
+			
+			<!--블로그-->
+			<div class="project-entry" data-date="2024-09-01">
+				<p><strong>블로그 어플리케이션</strong></p>
+				<p>2024.09 ~ 2024.10 <mark class="highlight-yellow">|</mark> 3인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt</p>
+				<!--이미지-->
+				<div class="column-list">
+					<div style="width:43.75%" class="column">
+						<figure class="image"><a href="a_project/blog_1.png">
+						<img style="width:331.984375px" src="a_project/blog_1.png"/></a></figure>
+					</div>
+					<div style="width:56.25%" class="column">
+						<figure class="image"><a href="a_project/blog_2.png">
+						<img style="width:709.984375px" src="a_project/blog_2.png"/></a></figure>
+					</div>
+				</div>
+				<!--설명-->
+				<figure class="block-color-gray_background callout" style="display:flex">
+					<div style="width:100%">
+						<p>Ubuntu 기반의 서버에서 구동되는 블로그 플랫폼으로, 클라이언트-서버 간 REST API를 통해 데이터 통신을 수행합니다. 사용자 로그인, 글 작성 및 조회 기능을 제공하며, MariaDB를 활용한 DB 연동과 멀티스레드를 통한 동시 접속 처리를 구현했습니다. 통신 담당 인원이 중도 하차하였으나 전체 구조를 빠르게 파악하고 인수인계를 수행하여 프로젝트 완성을 주도했습니다.</p>
+					</div>
+				</figure>
+				<!--프로젝트 링크-->
+				<p><a href="https://github.com/sm136599/VEDA_Qt_blog_server.git">https://github.com/sm136599/VEDA_Qt_blog_server.git</a></p>
+				<p></p>
+				<br>
+			</div>
+			
+			<!--미팅존-->
+			<div class="project-entry" data-date="2024-10-01">
+				<p><strong>유동형 화상회의 어플 [Meeting Zone]</strong></p>
+				<p>2024.10 ~ 2024.12 <mark class="highlight-yellow">|</mark> 5인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt, OpenCV</p>
+				<!--이미지-->
+				<div class="column-list">
+					<div style="width:43.75%" class="column">
+						<figure class="image"><a href="a_project/MZ_1.png">
+						<img style="width:709.984375px" src="a_project/MZ_1.png"/></a></figure>
+					</div>
+					<div style="width:56.25%" class="column">
+						<figure class="image"><a href="a_project/MZ_2.png">
+						<img style="width:710px" src="a_project/MZ_2.png"/></a></figure>
+					</div>
+				</div>
+				<!--설명-->
+				<figure class="block-color-gray_background callout" style="display:flex">
+					<div style="width:100%">
+						<p>OpenCV를 활용해 사용자의 얼굴을 인식하고 배경을 자동으로 제거하는 화상회의 클라이언트를 개발했습니다. 실시간 성능 개선을 위해 MOG 방식 대신 GrabCut 알고리즘을 적용하였고, Raspberry Pi 카메라의 영상 송출을 GStreamer로 제어하는 업무를 담당했습니다. 메타버스 환경의 자유로움과 화상회의의 가시성을 결합한 독창적인 유동형 인터페이스가 특징입니다.</p>
+					</div>
+				</figure>
+				<!--프로젝트 링크-->
+				<p><a href="https://github.com/ky107601/MeetingZone-MZ-.git">https://github.com/ky107601/MeetingZone-MZ-.git</a></p>
+				<p></p>
+				<br>
+			</div>
+			
+			<!--CCTV-->
+			<div class="project-entry" data-date="2024-10-02">
+				<p><strong>한화비전 CCTV 과제 : OpenCV를 이용한 BestShot 구현</strong></p>
+				<p>2024.10 ~ 2024.12 <mark class="highlight-yellow">|</mark> 5인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt, OpenCV</p>
+				<!--이미지-->
+				<div class="column-list">
+					<div style="width:56.25%" class="column">
+						<figure class="image"><a href="a_project/CCTV_1.png">
+						<img style="width:709.984375px" src="a_project/CCTV_1.png"/></a></figure>
+					</div>
+					<div style="width:43.75%" class="column">
+						<figure class="image"><a href="a_project/CCTV_2.png">
+						<img style="width:520px" src="a_project/CCTV_2.png"/></a></figure>
+					</div>
+				</div>
+				<!--설명-->
+				<figure class="block-color-gray_background callout" style="display:flex">
+					<div style="width:100%">
+						<p>CCTV 영상에서 인물의 얼굴을 실시간으로 인식하고, 사전에 설정된 정확도 기준을 충족할 경우 캡처하여 전송하는 BestShot 기능을 구현했습니다. 한화비전 제공 SDK의 내부 로직이 비공개인 상황에서도 로그 추적과 enum 분석을 통해 필요한 기능을 추출해냈습니다. 완성된 기능은 웹 페이지에 실시간으로 출력되며, 실제 장비에서 실행 가능한 상태로 개발되었습니다. (보안으로 인한 코드 공개 불가능)</p>
+					</div>
+				</figure>
+				<p></p>
+				<br>
+			</div>
+			
+			<!--이그젝트-->
+			<div class="project-entry" data-date="2025-04-01">
+				<p><strong>임베디드 토이프로젝트 [이그젝트 : ig-ject]</strong></p>
+				<p>2025.04 ~ 진행중 <mark class="highlight-yellow">|</mark> 1인 개발 <mark class="highlight-yellow">|</mark> C++, Linux(Ubuntu), Qt, Raspberry Pi, Arduino</p>
+				<!--설명-->
+				<figure class="block-color-gray_background callout" style="display:flex">
+					<div style="width:100%">
+						<p>일상 속에서 재미있게 활용할 수 있는 소형 임베디드 장치를 직접 설계하고 개발하는 개인 프로젝트입니다. Raspberry Pi와 Arduino를 이용해 회로 설계부터 센서 제어, 예외 처리까지 전반적인 임베디드 환경을 경험하기위한 프로젝트입니다. 반복 실행에서도 오류가 발생하지 않도록 안정성에 중점을 두고 예외처리를 설계하고 있으며, 다양한 결과물을 지속적으로 추가할 예정입니다.</p>
+					</div>
+				</figure>
+				<!--프로젝트 링크-->
+				<p><a href="https://github.com/Dynamic-Seagull/ig-ject.git">https://github.com/Dynamic-Seagull/ig-ject.git</a></p>
+				<p></p>
+				<br>
+			</div>
+		</div><p></p>
+		<br>
+		<hr/><p></p>
+		<br>
+		
+		<!--활동-->
+		<h2><mark class="highlight-yellow_background">활동</mark></h2>
+		<p></p>
+		<br>
+		
+		<!--참여활동-->
+		<details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">참여활동</summary>
+		<div class="indented">
+			<!--일문예-->
+			<p><strong>취미동아리 [일본문화예술연구회]</strong></p>
+			<p>2019.03 ~ 2024.02 (동아리장 : 2021.03~2023.02) </p>
+			<p>4년간 일본문화예술연구회에서 간부로 활동하며, 문집 제작, 교내 행사 기획, 동아리방 이전 등의 주요 업무를 담당했습니다. 동아리에 대한 애정을 바탕으로 지속적인 참여와 책임감을 가지고 활동했습니다. 대학시절 가장 즐거웠던 활동입니다.</p>
+			<!--이미지-->
+			<div class="column-list">
+				<div style="width:56%" class="column">
+					<figure class="image"><a href="b_activity/haru_1.jpg">
+					<img style="width:4032px" src="b_activity/haru_1.jpg"/></a></figure>
+				</div>
+				<div style="width:44%" class="column">
+					<figure class="image"><a href="b_activity/haru_2.jpg">
+					<img style="width:4000px" src="b_activity/haru_2.jpg"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			
+			<!--콜로니-->
+			<p><strong>보안동아리 [콜로니]</strong></p>
+			<p>2019.03 ~ 2021.02 (해킹 스터디 : 2019.03~ 2019.06 / 2020.12 ~ 2021.01)</p>
+			<p>보안 동아리 &#x27;콜로니&#x27;에서 해킹 스터디와 CTF(해킹 대회)에 참여하며 웹 해킹에 대한 지식을 쌓았습니다. 다양한 문제를 직접 풀어보며 보안 취약점 분석 능력과 문제 해결력을 기를 수 있었습니다. 실습 중심의 활동을 통해 보안 분야에 대한 흥미와 기초 지식을 배웠습니다..</p>
+			<!--이미지-->
+			<div class="column-list">
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="b_activity/colony_1.jpg">
+					<img style="width:710px" src="b_activity/colony_1.jpg"/></a></figure>
+				</div>
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="b_activity/colony_2.jpg">
+					<img style="width:1280px" src="b_activity/colony_2.jpg"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			
+			<!--하프셋-->
+			<p><strong>게임 개발팀 [하프셋]</strong></p>
+			<p>2023.03 ~ 2024.02</p>
+			<p>디자이너 1명과 개발자 2명으로 구성된 소규모 게임 개발팀 ‘하프셋’에서 팀원으로 활동하며 직접 게임을 제작했습니다. 공모전 출품을 목표로 협업과 개발을 진행하였고, 창업에 대한 의지도 함께 키웠습니다. 아쉽게도 팀은 각자의 사정으로 해체되었지만, 1년간 함께 작업했던 시간은 모두에게 즐거운 추억이 되어 여전히 친밀한 관계를 유지해 나가고 있습니다.</p>
+			<!--이미지-->
+			<div class="column-list">
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="b_activity/HALFSET_panel.jpg">
+					<img style="width:6120px" src="b_activity/HALFSET_panel.jpg"/></a></figure>
+				</div>
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="b_activity/HALFSET_Team_Logo.png">
+					<img style="width:300px" src="b_activity/HALFSET_Team_Logo.png"/></a></figure>
+					<figure class="image"><a href="b_activity/HALFSET_ABE_Logo.png">
+					<img style="width:385px" src="b_activity/HALFSET_ABE_Logo.png"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			
+			<!--HPE-->
+			<p><strong>기술 교육 이수 [HP 도커 &amp; 쿠버네티스 부트캠프]</strong></p>
+			<p>2024.01 ~2024.01</p>
+			<p>리눅스 중급 과정과 함께 Docker, Kubernetes 등 클라우드 기술을 다루는 교육에 참여하여 총 72시간의 교육을 이수했습니다. 이론뿐만 아니라 실습 중심의 커리큘럼을 통해 시스템 환경 구성과 운영에 대한 이해도를 높였습니다. 개발 및 배포 자동화에 대한 기초를 다질 수 있었고 특히 리눅스에 대한 이해를 넓히는 것에 도움이 되었습니다.</p>
+			<p></p>
+			<br>
+			
+			<!--BGS-->
+			<p><strong>대외활동 [부산글로벌게임센터 서포터즈 8기]</strong></p>
+			<p>2024.06 ~ 2024.12</p>
+			<p>글로벌게임센터 서포터즈 8기로 활동하며, BIC 및 지스타 같은 국내 주요 게임 행사에 참여했습니다. 팀원의 무단이탈과 행사 불참 등의 이유로 어려움이 있었지만 남은 팀원들 간 분위기를 화합하고 게임에 익숙하지 않은 인원들이 행사에 잘 참여 할 수 있도록 노력하며 팀 미션을 완료하는데 집중했습니다. 다양한 분야의 사람들과 함께 할 수 있는 활동이어서 여러 관점에서 하나의 주제에 대해 이야기 할 수 있었습니다.</p>
+			<!--이미지-->
+			<div class="column-list">
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="b_activity/BGS_1.jpg">
+					<img style="width:4000px" src="b_activity/BGS_1.jpg"/></a></figure>
+				</div>
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="b_activity/BGS_2.jpg">
+					<img style="width:4000px" src="b_activity/BGS_2.jpg"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			
+			<!--VEDA-->
+			<p><strong>기술교육 이수 [한화비전/GSC VEDA 부트캠프]</strong></p>
+			<p>2024.07 ~ 2024.12</p>
+			<p>엣지디바이스 개발을 위한 c++ 및 리눅스 교육입니다. 리눅스(우분투) 환경에서 임베디드용 소프트웨어를 개발하기 위하여 필요한 기술들(Qt, Yocto 등)을 공부하였습니다. 해당 프로그램을 이수하면서 2개의 팀프로젝트를 진행하였고 프로젝트를 진행하며 한화비전의 sdk와 cctv모델을 사용하였습니다. 실습은 라즈베리파이와 카메라 모듈을 사용하여 진행하였습니다. 해당 프로그램을 이수하면서 현직자 멘토분들을 통해 어떻게 현업이 이루어지는지 공부 할 수 있었고 회사의 제품을 직접 제공받아 사용해보면서 협업이 어떻게 이루어지는지 배울 수 있었습니다. 열정 넘치는 팀원들과 하루종일 함께 작업 할 수 있어서 즐거웠습니다.</p>
+			<!--이미지-->
+			<div class="column-list">
+				<div style="width:43.75%" class="column">
+					<figure class="image"><a href="b_activity/VEDA_1.jpg">
+					<img style="width:4000px" src="b_activity/VEDA_1.jpg"/></a></figure>
+				</div>
+				<div style="width:56.25%" class="column">
+					<figure class="image"><a href="b_activity/VEDA_2.jpg">
+					<img style="width:4000px" src="b_activity/VEDA_2.jpg"/></a></figure>
+				</div>
+			</div>
+		</div>
+		</details>
+		<p></p>
+		<br>
+		
+		<!--취미활동-->
+		<details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">취미활동</summary>
+		<div class="indented">
+		
+			<!--밴드-->
+			<p><strong>밴드활동 [I Am Cracker]</strong></p>
+			<p>취미 밴드 ‘I Am Cracker’에서 베이스 기타를 담당하고 있습니다. 낮은 음으로 드럼과 함께 세션의 리듬을 이끄는 베이스를 좋아하여 꾸준히 연습하고 있습니다. </p>
+			<div class="column-list">
+				<div style="width:25%" class="column">
+					<figure class="image"><a href="c_hobby/IAC_1.jpg">
+					<img style="width:2268px" src="c_hobby/IAC_1.jpg"/></a></figure>
+				</div>
+				<div style="width:75%" class="column">
+					<figure class="image"><a href="c_hobby/IAC_2.png">
+					<img style="width:590px" src="c_hobby/IAC_2.png"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			
+			<!--여행-->
+			<p><strong>국내 도보 여행</strong></p>
+			<p>국내를 여행 하며 혼자 다양한 지역을 탐방하는 것을 좋아합니다. 경치가 아름다운 자연 풍경이나 역사적인 유적지를 찾아다니며 여유롭게 시간을 보내며 즐거움을 느낍니다. 이러한 여행은 일상에 신선함을 주고, 잠시 쉬어가는 터닝포인트가 됩니다.</p>
+			<div class="column-list">
+				<div style="width:43.75%" class="column">
+					<figure class="image"><a href="c_hobby/tour_1.jpg">
+					<img style="width:8160px" src="c_hobby/tour_1.jpg"/></a></figure>
+				</div>
+				<div style="width:56.25%" class="column">
+					<figure class="image"><a href="c_hobby/tour_2.jpg">
+					<img style="width:4000px" src="c_hobby/tour_2.jpg"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			
+			<!--야구-->
+			<p><strong>야구 관람</strong></p>
+			<p>원조 낭만의 팀 부산 롯데 자이언츠의 팬입니다. 롯데 자이언츠가 통합 우승을 하는 그날까지.</p>
+			<div class="column-list">
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="c_hobby/LOTTE_1.jpg">
+					<img style="width:4000px" src="c_hobby/LOTTE_1.jpg"/></a></figure>
+				</div>
+				<div style="width:50%" class="column">
+					<figure class="image"><a href="c_hobby/LOTTE_2.jpg">
+					<img style="width:4000px" src="c_hobby/LOTTE_2.jpg"/></a></figure>
+				</div>
+			</div>
+			<p></p>
+			<br>
+			<p></p>
+			<br>
+		</div></details>
+	</div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+</html>
 
 <script>
-function toggleProjectSort(button) {
-    const section = document.getElementById("project-section");
-    const items = Array.from(section.getElementsByClassName("project-entry"));
-    const ascending = button.getAttribute("data-order") === "desc";
-    items.sort((a, b) => {
-        const dateA = new Date(a.getAttribute("data-date"));
-        const dateB = new Date(b.getAttribute("data-date"));
-        return ascending ? dateA - dateB : dateB - dateA;
-    });
-    items.forEach(item => section.appendChild(item));
-    button.setAttribute("data-order", ascending ? "asc" : "desc");
-    button.innerText = ascending ? "🔼 최신순" : "🔽 시간순";
-}
+	function toggleProjectSort(button) {
+		const section = document.getElementById("project-section");
+		const items = Array.from(section.getElementsByClassName("project-entry"));
+		const ascending = button.getAttribute("data-order") === "desc";
+		items.sort((a, b) => {
+			const dateA = new Date(a.getAttribute("data-date"));
+			const dateB = new Date(b.getAttribute("data-date"));
+			return ascending ? dateA - dateB : dateB - dateA;
+		});
+		items.forEach(item => section.appendChild(item));
+		button.setAttribute("data-order", ascending ? "asc" : "desc");
+		button.innerText = ascending ? "🔼 최신순" : "🔽 시간순";
+	}
 </script>
