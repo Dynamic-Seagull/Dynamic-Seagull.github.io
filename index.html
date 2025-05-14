@@ -28,8 +28,18 @@
 		<br>
 		
 		<!--참여 프로젝트-->
-		<h2 style="gap: 1em;"><mark class="highlight-yellow_background">참여 프로젝트</mark>
-		<span style="font-size: initial; font-weight: normal;"><button class="sort-toggle" onclick="toggleProjectSort(this)" data-order="asc">🔽 최신순</button></span></h2>
+		<h2 style="display: flex; justify-content: space-between; align-items: center;">
+		  <mark class="highlight-yellow_background">참여 프로젝트</mark>
+
+		  <div style="display: flex; align-items: center; gap: 0.5em;">
+			<label class="toggle-switch">
+			  <input type="checkbox" checked onchange="toggleProjectSortSwitch(this)">
+			  <span class="slider"></span>
+			</label>
+			<span id="sort-label" style="font-size: 0.9em; color: #555;">시간순</span>
+		  </div>
+		</h2>
+
 		<br>
 		
 		<div id="project-section">
@@ -343,17 +353,21 @@
 </html>
 
 <script>
-	function toggleProjectSort(button) {
-		const section = document.getElementById("project-section");
-		const items = Array.from(section.getElementsByClassName("project-entry"));
-		const ascending = button.getAttribute("data-order") === "desc";
-		items.sort((a, b) => {
-			const dateA = new Date(a.getAttribute("data-date"));
-			const dateB = new Date(b.getAttribute("data-date"));
-			return ascending ? dateA - dateB : dateB - dateA;
-		});
-		items.forEach(item => section.appendChild(item));
-		button.setAttribute("data-order", ascending ? "asc" : "desc");
-		button.innerText = ascending ? "🔼 최신순" : "🔽 시간순";
-	}
+function toggleProjectSortSwitch(input) {
+    const ascending = input.checked;
+    const section = document.getElementById("project-section");
+    const items = Array.from(section.getElementsByClassName("project-entry"));
+
+    // 정렬
+    items.sort((a, b) => {
+        const dateA = new Date(a.getAttribute("data-date"));
+        const dateB = new Date(b.getAttribute("data-date"));
+        return ascending ? dateA - dateB : dateB - dateA;
+    });
+    items.forEach(item => section.appendChild(item));
+
+    // 텍스트 라벨 변경
+    const label = document.getElementById("sort-label");
+    label.textContent = ascending ? "시간순" : "최신순";
+}
 </script>
